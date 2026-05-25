@@ -1383,10 +1383,11 @@
   .contact-form-card iframe {
   display: block;
   width: 100%;
-  min-height: 760px;
+  min-height: 980px;
   border: none;
   border-radius: 16px;
   background: #ffffff;
+  overflow: hidden;
 }
   .contact-form-card iframe {
   display: block;
@@ -2525,17 +2526,43 @@
     <div class="contact-layout">
 
       <!-- フォーム -->
-      <div class="contact-form-card reveal">
-        <iframe
-  src="https://tally.so/r/D4KAeX?transparentBackground=1"
-  width="100%"
-  height="760"
-  frameborder="0"
-  marginheight="0"
-  marginwidth="0"
-  title="お問い合わせフォーム">
-</iframe>
-      </div>
+      <div class="contact-form-card">
+  <iframe
+    data-tally-src="https://tally.so/embed/D4KAeX?transparentBackground=1&dynamicHeight=1"
+    loading="lazy"
+    width="100%"
+    height="980"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    scrolling="no"
+    title="お問い合わせフォーム">
+  </iframe>
+</div>
+
+<script>
+  var d = document;
+  var w = "https://tally.so/widgets/embed.js";
+  var v = function () {
+    if (typeof Tally !== "undefined") {
+      Tally.loadEmbeds();
+    } else {
+      d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+        e.src = e.dataset.tallySrc;
+      });
+    }
+  };
+
+  if (typeof Tally !== "undefined") {
+    v();
+  } else if (d.querySelector('script[src="' + w + '"]') == null) {
+    var s = d.createElement("script");
+    s.src = w;
+    s.onload = v;
+    s.onerror = v;
+    d.body.appendChild(s);
+  }
+</script>
 
       <!-- 右：流れ -->
       <div class="contact-flow reveal d2">
