@@ -47,11 +47,16 @@
     }
 
     .logo {
-      font-weight: 950;
-      font-size: 22px;
-      letter-spacing: 0.08em;
-      color: var(--ink);
-    }
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 46px;
+  width: auto;
+  display: block;
+}
 
     .back-link {
       font-size: 13px;
@@ -154,26 +159,32 @@
     }
 
     @media (max-width: 760px) {
-      .header {
-        padding: 0 24px;
-      }
+  .header {
+    padding: 0 24px;
+  }
 
-      .page {
-        padding: 80px 24px 100px;
-      }
+  .logo-img {
+    height: 40px;
+  }
 
-      .news-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 26px 0;
-      }
-    }
+  .page {
+    padding: 80px 24px 100px;
+  }
+
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 26px 0;
+  }
+}
   </style>
 </head>
 
 <body>
   <header class="header">
-    <a href="../" class="logo">ANYTRAIL</a>
+    <a href="../" class="logo">
+  <img src="../assets/images/logo_1.png" alt="AnyTrail" class="logo-img">
+</a>
     <a href="../" class="back-link">TOPへ戻る</a>
   </header>
 
