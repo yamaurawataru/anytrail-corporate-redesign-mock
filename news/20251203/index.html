@@ -67,24 +67,17 @@
       border-bottom: 1px solid rgba(15,23,38,0.06);
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--jakarta);
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--ink-1);
-    }
+   .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 
-    .logo-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: 0 8px 20px rgba(41,82,227,0.24);
-    }
+.logo-img {
+  height: 46px;
+  width: auto;
+  display: block;
+}
 
     .header-nav {
       display: flex;
@@ -487,13 +480,18 @@
     }
 
     @media (max-width: 960px) {
-      .site-header {
-        padding: 0 24px;
-      }
+  .site-header {
+    padding: 0 24px;
+  }
 
-      .header-nav {
-        display: none;
-      }
+  .logo-img {
+    height: 40px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+}
 
       .article-hero {
         padding: 86px 24px 64px;
@@ -561,9 +559,8 @@
 <body>
   <header class="site-header">
     <a href="../../" class="logo">
-      <span class="logo-mark"></span>
-      <span>AnyTrail</span>
-    </a>
+  <img src="../../assets/images/logo_1.png" alt="AnyTrail" class="logo-img">
+</a>
 
     <nav class="header-nav" aria-label="Main navigation">
       <a href="../../#mission">MISSION</a>
