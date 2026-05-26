@@ -2030,21 +2030,31 @@
     .advisor-modal-photo { height: 200px; }
     .advisor-modal-meta { flex-direction: column; align-items: flex-start; gap: 4px; padding: 20px 20px 12px; }
   }
+/* フッター下の余白を消す */
 html,
 body {
   margin: 0;
   padding: 0;
+  background: #07111f;
 }
 
-.page {
+body {
+  min-height: auto;
+}
+
+main {
   margin-bottom: 0;
   padding-bottom: 0;
-  background: #ffffff;
 }
 
 footer,
-.footer {
+.footer-main,
+.footer-bottom {
   margin-bottom: 0;
+}
+
+.footer-bottom {
+  padding-bottom: 0;
 }
 </style>
 </head>
