@@ -2057,13 +2057,38 @@ main {
 }
 
 .footer-main {
-  margin-bottom: 0 !important;
+  padding: 40px 56px 32px !important;
 }
 
 .footer-bottom {
-  margin-bottom: 0 !important;
-  padding-bottom: 28px !important;
-  background: #ffffff !important;
+  padding: 16px 56px 16px !important;
+}
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 32px 20px 24px !important;
+  }
+
+  .footer-bottom {
+    padding: 14px 20px 14px !important;
+  }
+}
+/* スマホ版ファーストビュー調整 */
+@media (max-width: 768px) {
+  .hero-bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(238,234,228,0.75) 0%,
+      rgba(238,234,228,0.65) 35%,
+      rgba(238,234,228,0.30) 58%,
+      rgba(238,234,228,0.05) 80%,
+      rgba(238,234,228,0.00) 100%
+    ) !important;
+  }
+
+  .hero-h1 {
+    font-size: clamp(38px, 10vw, 56px) !important;
+    line-height: 1.5 !important;
+  }
 }
 </style>
 </head>
