@@ -5,7 +5,7 @@
 <title>AnyTrail株式会社 | エッセンシャル・インフラ人材プラットフォーム</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 
 
 <style>
@@ -2248,6 +2248,72 @@ main {
     max-width: none !important;
   }
 }
+/* CEO — 写真下プロフィール情報（PC専用スタイル） */
+.ceo-profile-info { display: none; } /* デフォルトは非表示 */
+.ceo-name-pc {
+  font-family: var(--sans);
+  font-size: 26px; font-weight: 900;
+  color: var(--ink-1); letter-spacing: -0.02em;
+  margin-top: 20px; margin-bottom: 4px;
+}
+.ceo-role-pc {
+  font-size: 13px; color: var(--ink-2);
+}
+.ceo-signature {
+  font-family: 'Dancing Script', cursive;
+  font-size: 26px; font-weight: 700;
+  color: var(--brand); margin-top: 18px;
+  display: block; line-height: 1.4;
+}
+
+/* PC専用レイアウト（769px以上のみ） */
+@media (min-width: 769px) {
+  .ceo-section-d { display: flex !important; flex-direction: column !important; }
+
+  /* ヘッダー行 */
+  .ceo-header-row {
+    padding: 48px 56px 44px;
+    border-bottom: 1px solid rgba(15,23,38,0.08);
+    background: #ffffff;
+    position: relative; overflow: hidden;
+  }
+  .ceo-header-row .ceo-num-bg {
+    position: absolute; top: 50%; right: -10px;
+    transform: translateY(-50%);
+  }
+  .ceo-header-row .ceo-big-quote {
+    font-size: clamp(18px, 1.9vw, 28px) !important;
+    white-space: nowrap !important;
+    margin-bottom: 0 !important;
+    line-height: 1.5 !important;
+  }
+
+  /* コンテンツ行 */
+  .ceo-content-row {
+    display: grid !important;
+    grid-template-columns: 280px 1fr !important;
+    overflow: visible !important;
+  }
+
+  /* 左列 */
+  .ceo-profile-col {
+    padding: 40px 32px 48px 56px;
+    border-right: 1px solid rgba(15,23,38,0.06);
+    background: #ffffff;
+  }
+  .ceo-profile-col .ceo-visual-d {
+    width: 100% !important; height: 280px !important;
+    max-height: none !important; min-height: 0 !important;
+    border-radius: 14px !important; overflow: hidden;
+  }
+  .ceo-profile-col .ceo-name-overlay { display: none !important; }
+  .ceo-profile-info { display: block !important; } /* PCのみ表示 */
+
+  /* 右列 */
+  .ceo-text-d { padding: 44px 56px 48px 48px !important; }
+  .ceo-text-d .section-eyebrow-dark { display: none !important; }
+  .ceo-text-d .ceo-big-quote { display: none !important; }
+}
 </style>
 </head>
 <body>
@@ -2520,28 +2586,41 @@ main {
 <!-- CEO -->
 <section class="ceo-section-d" id="message">
 
-  <!-- PC専用ヘッダー行（モバイルでは非表示） -->
+  <!-- PC専用ヘッダー行 -->
   <div class="ceo-header-row">
     <div class="ceo-num-bg">CEO</div>
     <p class="section-eyebrow-dark" style="margin-bottom:20px;">代表メッセージ</p>
     <p class="ceo-big-quote reveal d1">AnyTrailは、エッセンシャル・インフラワーカー時代のNo.1人材プラットフォームを目指します。</p>
   </div>
 
-  <!-- コンテンツ行: 写真 + 本文 -->
+  <!-- コンテンツ行: プロフィール左 + 本文右 -->
   <div class="ceo-content-row">
-    <div class="ceo-visual-d">
-      <img src="./assets/images/ceo_6.jpg" alt="長浜 佑樹" onerror="this.style.display='none'">
-      <div class="ceo-visual-overlay"></div>
-      <div class="ceo-name-overlay">
-        <p class="ceo-name-big">長浜 佑樹</p>
-        <p class="ceo-role-small">代表取締役 / AnyTrail株式会社</p>
+
+    <!-- 左列: 写真 + 名前・役職・署名 -->
+    <div class="ceo-profile-col">
+      <div class="ceo-visual-d">
+        <img src="./assets/images/ceo_6.jpg" alt="長浜 佑樹" onerror="this.style.display='none'">
+        <div class="ceo-visual-overlay"></div>
+        <!-- モバイル専用の名前オーバーレイ -->
+        <div class="ceo-name-overlay">
+          <p class="ceo-name-big">長浜 佑樹</p>
+          <p class="ceo-role-small">代表取締役 / AnyTrail株式会社</p>
+        </div>
+      </div>
+      <!-- PC専用: 写真下の名前・役職・署名 -->
+      <div class="ceo-profile-info">
+        <p class="ceo-name-pc">長浜 佑樹</p>
+        <p class="ceo-role-pc">代表取締役 / AnyTrail株式会社</p>
+        <p class="ceo-signature">Yuki Nagahama</p>
       </div>
     </div>
+
+    <!-- 右列: 本文 -->
     <div class="ceo-text-d">
       <div class="ceo-blue-deco"></div>
-      <!-- モバイル専用: トグルボタン + 引用文（PCでは非表示） -->
+      <!-- モバイル専用トグル -->
       <p class="section-eyebrow-dark reveal" style="margin-bottom:32px;">代表メッセージ</p>
-      <p class="ceo-big-quote reveal d1">AnyTrailは、<br>エッセンシャル・インフラワーカー時代のNo.1人材プラットフォームを目指します。</p>
+      <p class="ceo-big-quote reveal d1">AnyTrailは、エッセンシャル・インフラワーカー時代のNo.1人材プラットフォームを目指します。</p>
       <!-- 本文（PC・モバイル共通） -->
       <div class="ceo-body-d reveal d2">
         <p class="ceo-chapter-title">原点</p>
@@ -2565,6 +2644,7 @@ main {
         <p>物流倉庫での経験、7年間の起業の経験、そして親としての責任感。—— これらすべてが、今のAnyTrailの創業につながっています。</p>
       </div>
     </div>
+
   </div>
 
 </section>
