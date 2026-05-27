@@ -2326,6 +2326,38 @@ main {
   .ceo-text-d .ceo-big-quote { display: none !important; }
   .ceo-blue-deco { display: none !important; }
 }
+/* CEO — 写真位置・左列グラデーション（PC専用） */
+@media (min-width: 769px) {
+
+  /* 写真の開始位置を「私は福岡で生まれ育ち...」の行に合わせる */
+  .ceo-profile-col {
+    padding-top: 96px !important;
+  }
+
+  /* 左列の下部に白フェード（名前の下のぼかし） */
+  .ceo-profile-col::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 180px;
+    background: linear-gradient(
+      to top,
+      rgba(255,255,255,1.0)  0%,
+      rgba(255,255,255,0.85) 30%,
+      rgba(255,255,255,0.45) 60%,
+      transparent            100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* テキスト（名前・役職・署名）をグラデーションの上に表示 */
+  .ceo-profile-info {
+    position: relative;
+    z-index: 3;
+  }
+
+}
 </style>
 </head>
 <body>
