@@ -772,27 +772,28 @@
     border-top: 1px solid var(--line-2);
     border-bottom: 1px solid var(--line-2);
   }
-  /* CEO section — 見出しを上段・写真+本文を下段に再レイアウト */
-.ceo-section-d {
-  display: flex !important;
-  flex-direction: column !important;
-}
-.ceo-header-row {
-  padding: 56px 56px 40px;
-  border-bottom: 1px solid rgba(15,23,38,0.08);
-  background: #ffffff;
-}
-.ceo-content-row {
-  display: grid;
-  grid-template-columns: 38fr 62fr;
-  overflow: hidden;
-}
-.ceo-visual-d {
-  max-height: 520px !important;
-}
-.ceo-big-quote {
-  font-size: clamp(26px, 3vw, 44px) !important;
-  margin-bottom: 0 !important;
+ @media (min-width: 769px) {
+  .ceo-section-d {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .ceo-header-row {
+    padding: 56px 56px 40px;
+    border-bottom: 1px solid rgba(15,23,38,0.08);
+    background: #ffffff;
+  }
+  .ceo-content-row {
+    display: grid;
+    grid-template-columns: 38fr 62fr;
+    overflow: hidden;
+  }
+  .ceo-visual-d {
+    max-height: 520px !important;
+  }
+  .ceo-big-quote {
+    font-size: clamp(26px, 3vw, 44px) !important;
+    margin-bottom: 0 !important;
+  }
 }
   
   /* Blue decorative element for CEO text panel */
