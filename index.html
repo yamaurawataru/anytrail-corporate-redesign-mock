@@ -2358,6 +2358,38 @@ main {
   }
 
 }
+@media (min-width: 769px) {
+
+  /* position: relative を追加（これがないと ::after が機能しない） */
+  .ceo-profile-col {
+    padding-top: 96px !important;
+    position: relative !important;
+  }
+
+  /* 左列の下部に白フェード */
+  .ceo-profile-col::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 180px;
+    background: linear-gradient(
+      to top,
+      rgba(255,255,255,1.0)  0%,
+      rgba(255,255,255,0.85) 30%,
+      rgba(255,255,255,0.45) 60%,
+      transparent            100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* テキストをグラデーションの上に表示 */
+  .ceo-profile-info {
+    position: relative;
+    z-index: 3;
+  }
+
+}
 </style>
 </head>
 <body>
