@@ -2248,25 +2248,26 @@ main {
     max-width: none !important;
   }
 }
-/* CEO — 写真下プロフィール情報（PC専用スタイル） */
-.ceo-profile-info { display: none; } /* デフォルトは非表示 */
+/* CEO — 写真下プロフィール情報（デフォルトは非表示） */
+.ceo-profile-info { display: none; }
 .ceo-name-pc {
   font-family: var(--sans);
-  font-size: 26px; font-weight: 900;
+  font-size: 28px; font-weight: 900;
   color: var(--ink-1); letter-spacing: -0.02em;
-  margin-top: 20px; margin-bottom: 4px;
+  margin-top: 24px; margin-bottom: 6px;
 }
 .ceo-role-pc {
   font-size: 13px; color: var(--ink-2);
+  line-height: 1.6;
 }
 .ceo-signature {
   font-family: 'Dancing Script', cursive;
-  font-size: 26px; font-weight: 700;
-  color: var(--brand); margin-top: 18px;
-  display: block; line-height: 1.4;
+  font-size: 28px; font-weight: 700;
+  color: var(--brand);
+  margin-top: 20px; display: block; line-height: 1.4;
 }
 
-/* PC専用レイアウト（769px以上のみ） */
+/* PC専用レイアウト */
 @media (min-width: 769px) {
   .ceo-section-d { display: flex !important; flex-direction: column !important; }
 
@@ -2288,31 +2289,42 @@ main {
     line-height: 1.5 !important;
   }
 
-  /* コンテンツ行 */
+  /* コンテンツ行: 左30% / 右70% */
   .ceo-content-row {
     display: grid !important;
-    grid-template-columns: 280px 1fr !important;
+    grid-template-columns: 30fr 70fr !important;
     overflow: visible !important;
   }
 
   /* 左列 */
   .ceo-profile-col {
-    padding: 40px 32px 48px 56px;
+    padding: 48px 24px 48px 56px;
     border-right: 1px solid rgba(15,23,38,0.06);
     background: #ffffff;
   }
-  .ceo-profile-col .ceo-visual-d {
-    width: 100% !important; height: 280px !important;
-    max-height: none !important; min-height: 0 !important;
-    border-radius: 14px !important; overflow: hidden;
-  }
-  .ceo-profile-col .ceo-name-overlay { display: none !important; }
-  .ceo-profile-info { display: block !important; } /* PCのみ表示 */
 
-  /* 右列 */
-  .ceo-text-d { padding: 44px 56px 48px 48px !important; }
+  /* 写真：大きめのポートレートサイズ */
+  .ceo-profile-col .ceo-visual-d {
+    width: 100% !important;
+    height: 380px !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+  }
+
+  /* PC では写真下の白グラデと名前オーバーレイを非表示 */
+  .ceo-profile-col .ceo-visual-overlay { opacity: 0 !important; }
+  .ceo-profile-col .ceo-name-overlay { display: none !important; }
+
+  /* PC では写真下プロフィール情報を表示 */
+  .ceo-profile-info { display: block !important; }
+
+  /* 右列（本文） */
+  .ceo-text-d { padding: 48px 56px 48px 52px !important; }
   .ceo-text-d .section-eyebrow-dark { display: none !important; }
   .ceo-text-d .ceo-big-quote { display: none !important; }
+  .ceo-blue-deco { display: none !important; }
 }
 </style>
 </head>
