@@ -2219,6 +2219,29 @@ main {
   .footer-copy         { font-size: 13px !important; }
   .footer-legal a      { font-size: 13px !important; }
 }
+/* MISSION / VISION — 各要素の高さを左右で揃える（PC専用） */
+@media (min-width: 769px) {
+  .mv-container {
+    grid-template-rows: repeat(5, auto);
+    align-items: start;
+  }
+  .mv-item {
+    display: grid !important;
+    grid-row: 1 / span 5;
+    grid-template-rows: subgrid;
+    justify-items: start;
+    align-items: start;
+  }
+}
+/* アドバイザー — 左右余白を改善（PC専用） */
+@media (min-width: 769px) {
+  .advisors-head {
+    max-width: none !important;
+  }
+  .advisor-grid-d {
+    max-width: none !important;
+  }
+}
 </style>
 </head>
 <body>
