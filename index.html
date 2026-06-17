@@ -2594,6 +2594,31 @@ main {
   .ceo-chapter-title[data-ch="5"] { color: #be185d !important; }
   .ceo-chapter-title[data-ch="5"]::before { background: #be185d !important; }
 }
+  /* ── CEO メッセージ パステルデザイン (PC only) ── */
+@media (min-width: 769px) {
+  /* 右パネル：薄めのパステルグラデーション */
+  .ceo-text-d {
+    background: linear-gradient(155deg, #f5f7ff 0%, #f8f5ff 55%, #fff5fb 100%) !important;
+  }
+  /* 青い丸デコを非表示 */
+  .ceo-blue-deco { display: none !important; }
+  /* 画像サイズを元に戻す */
+  .ceo-content-row .ceo-visual-d {
+    max-height: 480px !important;
+    min-height: unset !important;
+  }
+  /* 章タイトルの色分け（ドット含む） */
+  .ceo-chapter-title[data-ch="1"] { color: #2952E3 !important; }
+  .ceo-chapter-title[data-ch="1"]::before { background: #2952E3 !important; }
+  .ceo-chapter-title[data-ch="2"] { color: #6d28d9 !important; }
+  .ceo-chapter-title[data-ch="2"]::before { background: #6d28d9 !important; }
+  .ceo-chapter-title[data-ch="3"] { color: #0e7490 !important; }
+  .ceo-chapter-title[data-ch="3"]::before { background: #0e7490 !important; }
+  .ceo-chapter-title[data-ch="4"] { color: #b45309 !important; }
+  .ceo-chapter-title[data-ch="4"]::before { background: #b45309 !important; }
+  .ceo-chapter-title[data-ch="5"] { color: #be185d !important; }
+  .ceo-chapter-title[data-ch="5"]::before { background: #be185d !important; }
+}
 </style>
 </head>
 <body>
@@ -2933,7 +2958,7 @@ main {
       <div class="ceo-profile-info">
         <p class="ceo-name-pc">長浜 佑樹</p>
         <p class="ceo-role-pc">代表取締役 / AnyTrail株式会社</p>
-        <p class="ceo-signature">Yuki Nagahama</p>
+      
       </div>
     </div>
 
