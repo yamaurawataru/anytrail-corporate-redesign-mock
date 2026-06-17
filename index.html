@@ -2475,6 +2475,80 @@ main {
   .clients-strip-title { font-size: 15px; }
   .clients-strip-note { font-size: 12px; }
 }
+  .clients-strip {
+  padding: 48px 0 40px;
+  border-top: 1px solid rgba(15,23,38,0.08);
+  margin-top: 48px;
+}
+.clients-strip-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+.clients-strip-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+.clients-strip-line {
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: rgba(15,23,38,0.18);
+  display: block;
+}
+.clients-strip-title {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink-1);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.clients-logo-row--top,
+.clients-logo-row--bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 48px 60px;
+}
+.clients-logo-row--bottom {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(15,23,38,0.07);
+}
+.clients-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clients-logo-item img {
+  height: 90px;
+  max-width: 220px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.25s;
+}
+.clients-logo-item img:hover { opacity: 0.8; }
+.clients-strip-note {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--ink-2);
+  letter-spacing: 0.03em;
+}
+@media (max-width: 768px) {
+  .clients-strip { padding: 36px 0 28px; margin-top: 32px; }
+  .clients-strip-inner { padding: 0 24px; }
+  .clients-logo-row--top,
+  .clients-logo-row--bottom { gap: 28px 36px; }
+  .clients-logo-item img { height: 60px; max-width: 140px; }
+  .clients-strip-title { font-size: 15px; }
+  .clients-strip-note { font-size: 12px; }
+}
 </style>
 </head>
 <body>
@@ -2676,36 +2750,40 @@ main {
         </div>
 
     <!-- 採用支援先企業ロゴ帯 -->
-    <div class="clients-strip">
-      <div class="clients-strip-inner">
-        <div class="clients-strip-header">
-          <span class="clients-strip-line"></span>
-          <span class="clients-strip-title">採用支援先企業（一部抜粋）</span>
-          <span class="clients-strip-line"></span>
-        </div>
-        <div class="clients-logo-row">
-  <!-- 上段: 4枚 -->
-  <div class="clients-logo-row--top">
-    <div class="clients-logo-item">
-      <img src="./assets/images/client_nihonkotsu.png" alt="日本交通">
+<div class="clients-strip">
+  <div class="clients-strip-inner">
+    <div class="clients-strip-header">
+      <span class="clients-strip-line"></span>
+      <span class="clients-strip-title">採用支援先企業（一部抜粋）</span>
+      <span class="clients-strip-line"></span>
     </div>
-    <div class="clients-logo-item">
-      <img src="./assets/images/client_km.png" alt="国際自動車（km）">
-    </div>
-    <div class="clients-logo-item">
-      <img src="./assets/images/client_daiichi.png" alt="第一交通">
-    </div>
-    <div class="clients-logo-item">
-      <img src="./assets/images/client_sanwa.png" alt="三和交通">
-    </div>
-  </div>
-  <!-- 下段: 追加ロゴ（後で追加） -->
-  <div class="clients-logo-row--bottom">
-  </div>
-</div>
-        <p class="clients-strip-note">※掲載は一部の企業様です。順不同・敬称略</p>
+    <!-- 上段: 4枚 -->
+    <div class="clients-logo-row--top">
+      <div class="clients-logo-item">
+        <img src="./assets/images/client_nihonkotsu.png" alt="日本交通">
+      </div>
+      <div class="clients-logo-item">
+        <img src="./assets/images/client_km.png" alt="国際自動車（km）">
+      </div>
+      <div class="clients-logo-item">
+        <img src="./assets/images/client_daiichi.png" alt="荏原交通">
+      </div>
+      <div class="clients-logo-item">
+        <img src="./assets/images/client_sanwa.png" alt="三和交通">
       </div>
     </div>
+    <!-- 下段: 2枚 -->
+    <div class="clients-logo-row--bottom">
+      <div class="clients-logo-item">
+        <img src="./assets/images/client_nts.png" alt="SBSフレイトサービス">
+      </div>
+      <div class="clients-logo-item">
+        <img src="./assets/images/client_sbs.jpg" alt="NTS GROUP">
+      </div>
+    </div>
+    <p class="clients-strip-note">※掲載は一部の企業様です。順不同・敬称略</p>
+  </div>
+</div>
 
   </div>
 </section>
