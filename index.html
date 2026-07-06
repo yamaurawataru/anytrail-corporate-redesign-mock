@@ -499,21 +499,21 @@
     position: relative; overflow: hidden;
   }
   .mv-item:first-child::after {
-    content: 'MISSION';
+    content: 'VISION';
     position: absolute; bottom: -30px; left: -10px;
     font-family: var(--jakarta); font-size: 200px; font-weight: 700;
     color: rgba(0,0,0,0.025); pointer-events: none;
     letter-spacing: -0.04em; line-height: 1; white-space: nowrap;
   }
   .mv-item:last-child::after {
-    content: 'VISION';
+    content: 'MISSION';
     position: absolute; top: -30px; right: -10px;
     font-family: var(--jakarta); font-size: 200px; font-weight: 700;
     color: rgba(0,0,0,0.025); pointer-events: none;
     letter-spacing: -0.04em; line-height: 1; white-space: nowrap;
   }
-  .mv-item:first-child > *:not(.mv-wave-bg) { position: relative; z-index: 1; }
-  .mv-item:first-child .mv-wave-bg ~ * { margin-top: 0; }
+  .mv-item:last-child > *:not(.mv-wave-bg) { position: relative; z-index: 1; }
+  .mv-item:last-child .mv-wave-bg ~ * { margin-top: 0; }
 
   /* Light-streak background (black = transparent via screen blend) */
   .mv-wave-bg {
@@ -2574,7 +2574,7 @@ main {
     padding-bottom: 32px !important;
   }
   .ceo-profile-col .ceo-visual-d {
-    height: 280px !important;
+    height: 504px !important;
   }
   .ceo-text-d {
     padding-top: 32px !important;
@@ -2608,7 +2608,7 @@ main {
   .ceo-blue-deco { display: none !important; }
   /* 画像サイズを元に戻す */
   .ceo-content-row .ceo-visual-d {
-    max-height: 480px !important;
+    max-height: 504px !important;
     min-height: unset !important;
   }
   /* 章タイトルの色分け（ドット含む） */
@@ -2708,11 +2708,11 @@ main {
   <div class="hero-left">
     <p class="hero-super"><span class="no-transform">AnyTrail</span> INC. — Human Capital Platform</p>
     <h1 class="hero-h1">
-      <span style="white-space:nowrap;">社会を支える人に、</span><br>
-      <span class="line2">次のキャリアの</span>
-      <span class="accent-word">道筋</span>を。
+      <span style="white-space:nowrap;">挑戦する企業に、</span><br>
+      <span class="line2">人と資本が集まる</span>
+      <span style="white-space:nowrap;">新しい<span class="accent-word">社会</span>を。</span>
     </h1>
-    <p class="hero-sub"><span class="hero-sub-line">AIとテクノロジーの力で、働くすべての人の可能性を広げ、</span><br><span class="hero-sub-line">持続可能な社会の実現に貢献します。</span></p>
+    <p class="hero-sub"><span class="hero-sub-line">AnyTrailは、採用・人材・事業支援を通じて、</span><br><span class="hero-sub-line">成長を目指す企業の可能性をひらきます。</span></p>
 
     <div class="hero-ctas">
       <a href="#services" class="btn-white">
@@ -2739,34 +2739,20 @@ main {
   <div class="mv-container">
 
     <div class="mv-item reveal">
-      <span class="mv-label">Mission</span>
+      <span class="mv-label">Vision</span>
       <span class="mv-label-line"></span>
-      <h2 class="mv-statement">人々の暮らしを支える仕事に、より良いキャリアの選択肢を届ける。</h2>
+      <h2 class="mv-statement">挑戦する企業に人と資本が<br>集まる社会をつくる</h2>
       <span class="mv-headline-line"></span>
-      <p class="mv-desc">タクシー・物流・配送・運送。社会を支えるエッセンシャルな仕事に就く人々が、安心して働き続けられる環境をつくります。採用から定着まで、働く人と企業の双方に誠実に向き合うことが私たちのミッションです。</p>
-      <div class="mv-wave-bg"><svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><filter id="glg"><feGaussianBlur stdDeviation="14"/></filter><filter id="glm"><feGaussianBlur stdDeviation="5"/></filter><filter id="gls"><feGaussianBlur stdDeviation="2"/></filter><filter id="glp"><feGaussianBlur stdDeviation="9"/></filter></defs><ellipse cx="548" cy="455" rx="55" ry="38" fill="rgba(255,255,255,0.5)" filter="url(#glp)"/><path d="M318,700 C392,618 468,535 548,455 C628,375 780,198 968,28" stroke="rgba(255,255,255,0.16)" stroke-width="36" fill="none" filter="url(#glg)"/><path d="M348,700 C418,621 475,538 548,455 C621,372 772,195 958,22" stroke="rgba(255,255,255,0.22)" stroke-width="22" fill="none" filter="url(#glg)"/><path d="M328,700 C400,619 470,536 548,455 C626,374 778,197 965,26" stroke="rgba(255,255,255,0.38)" stroke-width="10" fill="none" filter="url(#glm)"/><path d="M355,700 C422,622 478,539 548,455 C618,371 770,194 956,20" stroke="rgba(255,255,255,0.30)" stroke-width="7"  fill="none" filter="url(#glm)"/><path d="M300,700 C377,615 460,532 548,455 C636,378 786,200 972,30" stroke="rgba(255,255,255,0.22)" stroke-width="5"  fill="none" filter="url(#glm)"/><path d="M338,700 C408,620 472,537 548,455 C624,373 776,196 962,24" stroke="white" stroke-width="2.2" fill="none"/><path d="M318,700 C390,618 466,534 548,455 C630,376 782,199 968,28" stroke="rgba(255,255,255,0.88)" stroke-width="1.6" fill="none"/><path d="M358,700 C425,622 480,539 548,455 C616,371 768,193 954,19" stroke="rgba(255,255,255,0.88)" stroke-width="1.6" fill="none"/><path d="M295,700 C372,614 456,531 548,455 C640,379 792,202 975,32" stroke="rgba(255,255,255,0.65)" stroke-width="1.2" fill="none"/><path d="M378,700 C440,624 486,541 548,455 C610,369 764,191 950,16" stroke="rgba(255,255,255,0.65)" stroke-width="1.2" fill="none"/><path d="M270,700 C352,611 444,528 548,455 C652,382 800,205 980,36" stroke="rgba(255,255,255,0.42)" stroke-width="0.9" fill="none"/><path d="M400,700 C456,626 494,543 548,455 C602,367 758,188 946,12" stroke="rgba(255,255,255,0.42)" stroke-width="0.9" fill="none"/><path d="M548,455 C638,358 808,185 1000,18"  stroke="rgba(255,255,255,0.28)" stroke-width="0.7" fill="none"/><path d="M548,455 C625,350 790,175 990,5"    stroke="rgba(255,255,255,0.20)" stroke-width="0.6" fill="none"/><path d="M548,455 C650,365 820,196 1005,30"  stroke="rgba(255,255,255,0.18)" stroke-width="0.5" fill="none"/><circle cx="372" cy="648" r="2"   fill="white" opacity="0.80"/><circle cx="340" cy="668" r="1.5" fill="white" opacity="0.70"/><circle cx="310" cy="655" r="2"   fill="white" opacity="0.75"/><circle cx="285" cy="672" r="1.5" fill="white" opacity="0.65"/><circle cx="260" cy="648" r="1.5" fill="white" opacity="0.60"/><circle cx="400" cy="635" r="1.5" fill="white" opacity="0.70"/><circle cx="425" cy="618" r="1"   fill="white" opacity="0.60"/><circle cx="448" cy="600" r="1.5" fill="white" opacity="0.65"/><circle cx="470" cy="582" r="1"   fill="white" opacity="0.55"/><circle cx="235" cy="680" r="1"   fill="white" opacity="0.55"/><circle cx="500" cy="568" r="1"   fill="white" opacity="0.50"/><circle cx="592" cy="502" r="1.5" fill="white" opacity="0.68"/><circle cx="620" cy="478" r="1"   fill="white" opacity="0.58"/><circle cx="648" cy="454" r="1.5" fill="white" opacity="0.72"/><circle cx="510" cy="532" r="1"   fill="white" opacity="0.52"/><circle cx="718" cy="358" r="2"   fill="white" opacity="0.82"/><circle cx="748" cy="330" r="1.5" fill="white" opacity="0.72"/><circle cx="775" cy="305" r="2"   fill="white" opacity="0.80"/><circle cx="800" cy="278" r="1.5" fill="white" opacity="0.70"/><circle cx="825" cy="252" r="2"   fill="white" opacity="0.78"/><circle cx="850" cy="225" r="1.5" fill="white" opacity="0.68"/><circle cx="872" cy="200" r="2"   fill="white" opacity="0.82"/><circle cx="895" cy="172" r="1.5" fill="white" opacity="0.72"/><circle cx="915" cy="148" r="2"   fill="white" opacity="0.78"/><circle cx="935" cy="122" r="1.5" fill="white" opacity="0.68"/><circle cx="952" cy="98"  r="1.5" fill="white" opacity="0.75"/><circle cx="695" cy="382" r="1"   fill="white" opacity="0.58"/><circle cx="762" cy="320" r="1"   fill="white" opacity="0.55"/><circle cx="838" cy="240" r="1"   fill="white" opacity="0.55"/><circle cx="902" cy="160" r="1"   fill="white" opacity="0.55"/><g fill="white"><path d="M712,368 l2,-6 l2,6 l6,-1.5 l-6,3 l-2,6 l-2,-6 l-6,-1.5 Z" opacity="0.90"/><path d="M850,235 l1.5,-5 l1.5,5 l5,-1.5 l-5,3 l-1.5,5 l-1.5,-5 l-5,-1.5 Z" opacity="0.85"/><path d="M920,138 l1.2,-4 l1.2,4 l4,-1.2 l-4,2.4 l-1.2,4 l-1.2,-4 l-4,-1.2 Z" opacity="0.82"/><path d="M380,640 l1.5,-5 l1.5,5 l5,-1.5 l-5,3 l-1.5,5 l-1.5,-5 l-5,-1.5 Z" opacity="0.78"/><path d="M440,605 l1.2,-4 l1.2,4 l4,-1.2 l-4,2.4 l-1.2,4 l-1.2,-4 l-4,-1.2 Z" opacity="0.72"/><path d="M968,90  l1.2,-4 l1.2,4 l4,-1.2 l-4,2.4 l-1.2,4 l-1.2,-4 l-4,-1.2 Z" opacity="0.75"/></g></svg></div>
+      <p class="mv-desc">挑戦する企業に、必要な人材と資本が集まり、次の成長へ踏み出せる社会をつくります。<br>AnyTrailは、人材支援と事業支援を通じて、企業の成長循環を生み出すプラットフォームを目指します。</p>
     </div>
 
     <div class="mv-item reveal d1">
-      <span class="mv-label">Vision</span>
+      <span class="mv-label">Mission</span>
       <span class="mv-label-line"></span>
-      <h2 class="mv-statement">エッセンシャル・インフラワーカー領域における、No.1人材プラットフォームをつくる。</h2>
+      <h2 class="mv-statement">企業の新陳代謝を加速させる</h2>
       <span class="mv-headline-line"></span>
-      <p class="mv-desc">テクノロジーと人の力で、エッセンシャルワーカーが活躍できる社会を実現します。採用・定着・キャリア形成を一気通貫で支援し、業界のスタンダードを変えていきます。</p>
-      <div class="mv-vals">
-        <div class="mv-val">
-          <span class="mv-val-n">01</span><span class="mv-val-t">現場への解像度を高く持つ</span>
-        </div>
-        <div class="mv-val">
-          <span class="mv-val-n">02</span><span class="mv-val-t">人と企業の未来に責任を持つ</span>
-        </div>
-        <div class="mv-val">
-          <span class="mv-val-n">03</span><span class="mv-val-t">誠実に向き合う</span>
-        </div>
-        <div class="mv-val">
-          <span class="mv-val-n">04</span><span class="mv-val-t">社会インフラを支える人を支える</span>
-        </div>
-      </div>
+      <p class="mv-desc">企業が変化し、成長し続けるためには、事業を支える人材の流動性と、次の挑戦を後押しする仕組みが必要です。AnyTrailは、人と企業の可能性を正しくつなぎ、挑戦する企業の新陳代謝を加速させます。</p>
+      <div class="mv-wave-bg"><svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><filter id="glg"><feGaussianBlur stdDeviation="14"/></filter><filter id="glm"><feGaussianBlur stdDeviation="5"/></filter><filter id="gls"><feGaussianBlur stdDeviation="2"/></filter><filter id="glp"><feGaussianBlur stdDeviation="9"/></filter></defs><ellipse cx="548" cy="455" rx="55" ry="38" fill="rgba(255,255,255,0.5)" filter="url(#glp)"/><path d="M318,700 C392,618 468,535 548,455 C628,375 780,198 968,28" stroke="rgba(255,255,255,0.16)" stroke-width="36" fill="none" filter="url(#glg)"/><path d="M348,700 C418,621 475,538 548,455 C621,372 772,195 958,22" stroke="rgba(255,255,255,0.22)" stroke-width="22" fill="none" filter="url(#glg)"/><path d="M328,700 C400,619 470,536 548,455 C626,374 778,197 965,26" stroke="rgba(255,255,255,0.38)" stroke-width="10" fill="none" filter="url(#glm)"/><path d="M355,700 C422,622 478,539 548,455 C618,371 770,194 956,20" stroke="rgba(255,255,255,0.30)" stroke-width="7"  fill="none" filter="url(#glm)"/><path d="M300,700 C377,615 460,532 548,455 C636,378 786,200 972,30" stroke="rgba(255,255,255,0.22)" stroke-width="5"  fill="none" filter="url(#glm)"/><path d="M338,700 C408,620 472,537 548,455 C624,373 776,196 962,24" stroke="white" stroke-width="2.2" fill="none"/><path d="M318,700 C390,618 466,534 548,455 C630,376 782,199 968,28" stroke="rgba(255,255,255,0.88)" stroke-width="1.6" fill="none"/><path d="M358,700 C425,622 480,539 548,455 C616,371 768,193 954,19" stroke="rgba(255,255,255,0.88)" stroke-width="1.6" fill="none"/><path d="M295,700 C372,614 456,531 548,455 C640,379 792,202 975,32" stroke="rgba(255,255,255,0.65)" stroke-width="1.2" fill="none"/><path d="M378,700 C440,624 486,541 548,455 C610,369 764,191 950,16" stroke="rgba(255,255,255,0.65)" stroke-width="1.2" fill="none"/><path d="M270,700 C352,611 444,528 548,455 C652,382 800,205 980,36" stroke="rgba(255,255,255,0.42)" stroke-width="0.9" fill="none"/><path d="M400,700 C456,626 494,543 548,455 C602,367 758,188 946,12" stroke="rgba(255,255,255,0.42)" stroke-width="0.9" fill="none"/><path d="M548,455 C638,358 808,185 1000,18"  stroke="rgba(255,255,255,0.28)" stroke-width="0.7" fill="none"/><path d="M548,455 C625,350 790,175 990,5"    stroke="rgba(255,255,255,0.20)" stroke-width="0.6" fill="none"/><path d="M548,455 C650,365 820,196 1005,30"  stroke="rgba(255,255,255,0.18)" stroke-width="0.5" fill="none"/><circle cx="372" cy="648" r="2"   fill="white" opacity="0.80"/><circle cx="340" cy="668" r="1.5" fill="white" opacity="0.70"/><circle cx="310" cy="655" r="2"   fill="white" opacity="0.75"/><circle cx="285" cy="672" r="1.5" fill="white" opacity="0.65"/><circle cx="260" cy="648" r="1.5" fill="white" opacity="0.60"/><circle cx="400" cy="635" r="1.5" fill="white" opacity="0.70"/><circle cx="425" cy="618" r="1"   fill="white" opacity="0.60"/><circle cx="448" cy="600" r="1.5" fill="white" opacity="0.65"/><circle cx="470" cy="582" r="1"   fill="white" opacity="0.55"/><circle cx="235" cy="680" r="1"   fill="white" opacity="0.55"/><circle cx="500" cy="568" r="1"   fill="white" opacity="0.50"/><circle cx="592" cy="502" r="1.5" fill="white" opacity="0.68"/><circle cx="620" cy="478" r="1"   fill="white" opacity="0.58"/><circle cx="648" cy="454" r="1.5" fill="white" opacity="0.72"/><circle cx="510" cy="532" r="1"   fill="white" opacity="0.52"/><circle cx="718" cy="358" r="2"   fill="white" opacity="0.82"/><circle cx="748" cy="330" r="1.5" fill="white" opacity="0.72"/><circle cx="775" cy="305" r="2"   fill="white" opacity="0.80"/><circle cx="800" cy="278" r="1.5" fill="white" opacity="0.70"/><circle cx="825" cy="252" r="2"   fill="white" opacity="0.78"/><circle cx="850" cy="225" r="1.5" fill="white" opacity="0.68"/><circle cx="872" cy="200" r="2"   fill="white" opacity="0.82"/><circle cx="895" cy="172" r="1.5" fill="white" opacity="0.72"/><circle cx="915" cy="148" r="2"   fill="white" opacity="0.78"/><circle cx="935" cy="122" r="1.5" fill="white" opacity="0.68"/><circle cx="952" cy="98"  r="1.5" fill="white" opacity="0.75"/><circle cx="695" cy="382" r="1"   fill="white" opacity="0.58"/><circle cx="762" cy="320" r="1"   fill="white" opacity="0.55"/><circle cx="838" cy="240" r="1"   fill="white" opacity="0.55"/><circle cx="902" cy="160" r="1"   fill="white" opacity="0.55"/><g fill="white"><path d="M712,368 l2,-6 l2,6 l6,-1.5 l-6,3 l-2,6 l-2,-6 l-6,-1.5 Z" opacity="0.90"/><path d="M850,235 l1.5,-5 l1.5,5 l5,-1.5 l-5,3 l-1.5,5 l-1.5,-5 l-5,-1.5 Z" opacity="0.85"/><path d="M920,138 l1.2,-4 l1.2,4 l4,-1.2 l-4,2.4 l-1.2,4 l-1.2,-4 l-4,-1.2 Z" opacity="0.82"/><path d="M380,640 l1.5,-5 l1.5,5 l5,-1.5 l-5,3 l-1.5,5 l-1.5,-5 l-5,-1.5 Z" opacity="0.78"/><path d="M440,605 l1.2,-4 l1.2,4 l4,-1.2 l-4,2.4 l-1.2,4 l-1.2,-4 l-4,-1.2 Z" opacity="0.72"/><path d="M968,90  l1.2,-4 l1.2,4 l4,-1.2 l-4,2.4 l-1.2,4 l-1.2,-4 l-4,-1.2 Z" opacity="0.75"/></g></svg></div>
     </div>
 
   </div>
