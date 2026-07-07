@@ -217,5 +217,37 @@
       </div>
     </div>
   </main>
+
+  <script>
+    async function loadNewsList() {
+      try {
+        const response = await fetch('/api/news');
+        const data = await response.json();
+    
+        const newsList = document.querySelector('.news-list');
+        if (!newsList) return;
+    
+        newsList.innerHTML = data.news
+          .filter((item) => item.published && item.sites.includes('anytrail.jp'))
+          .map((item) => {
+            const dateText = item.date.replaceAll('-', '.');
+            const linkDate = item.date.replaceAll('-', '');
+    
+            return `
+              <a class="news-item" href="./detail.html?date=${linkDate}">
+                <div class="date">${dateText}</div>
+                <div class="cat">NEWS</div>
+                <div class="title">${item.title}</div>
+              </a>
+            `;
+          })
+          .join('');
+      } catch (error) {
+        console.error('お知らせ一覧の取得に失敗しました', error);
+      }
+    }
+    
+    loadNewsList();
+    </script>
 </body>
 </html>
