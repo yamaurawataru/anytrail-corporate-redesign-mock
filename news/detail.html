@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お知らせ詳細 | AnyTrail株式会社</title>
+  <style>
+    :root {
+      --ink: #07090f;
+      --blue: #1f6fff;
+      --paper: #fbf8f1;
+      --text: #20242d;
+      --muted: #6b7280;
+      --line: rgba(8, 11, 18, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--paper);
+    }
+
+    a { color: inherit; }
+
+    .header {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      border-bottom: 1px solid rgba(8,11,18,0.08);
+      background: rgba(251, 248, 241, 0.9);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo-img {
+      height: 46px;
+      width: auto;
+      display: block;
+    }
+
+    .back-link {
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--ink);
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 96px 54px 140px;
+      background:
+        radial-gradient(circle at 84% 16%, rgba(31, 111, 255, 0.12), transparent 28%),
+        linear-gradient(135deg, var(--paper) 0%, #f0ece4 100%);
+    }
+
+    .inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.24em;
+      color: rgba(8, 11, 18, 0.5);
+      margin-bottom: 28px;
+    }
+
+    .title {
+      margin: 0 0 28px;
+      color: var(--ink);
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 1.18;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+    }
+
+    .title:empty {
+  min-height: 1.2em;
+}
+
+    .meta {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    .date {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .cat {
+      width: fit-content;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(31,111,255,0.1);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+    }
+
+    .article {
+  background: rgba(255,255,255,0.48);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 40px 48px;
+  font-size: 17px;
+  line-height: 2.1;
+  font-weight: 550;
+  white-space: normal;
+}
+
+    .article a {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-nav {
+      margin-top: 48px;
+    }
+
+    .footer-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 850;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      padding: 14px 20px;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 760px) {
+      .header { padding: 0 24px; }
+      .logo-img { height: 40px; }
+      .page { padding: 72px 24px 100px; }
+      .article { font-size: 15px; padding: 36px 0; }
+    }
+    .article-text {
+  margin-bottom: 24px;
+}
+
+.article-button-wrap {
+  margin-top: 12px;
+}
+
+.article-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 850;
+  text-decoration: none !important;
+  transition: opacity .2s ease;
+}
+
+.article-button:hover {
+  opacity: .85;
+}
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="../">
+      <img src="../assets/images/logo_1.png" alt="AnyTrail" class="logo-img">
+    </a>
+    <a href="./" class="back-link">一覧へ戻る</a>
+  </header>
+
+  <main class="page">
+    <div class="inner">
+      <div class="eyebrow">NEWS</div>
+
+      <h1 class="title" id="newsTitle"></h1>
+
+      <div class="meta">
+        <div class="date" id="newsDate"></div>
+        <div class="cat">NEWS</div>
+      </div>
+
+      <article class="article" id="newsContent"></article>
+
+      <div class="footer-nav">
+        <a href="./">← お知らせ一覧へ戻る</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    async function loadNewsDetail() {
+      const params = new URLSearchParams(window.location.search);
+      const date = params.get('date');
+
+      const response = await fetch('/api/news');
+      const data = await response.json();
+
+      const article = data.news.find((item) => {
+        return item.date.replaceAll('-', '') === date;
+      });
+
+      if (!article) {
+        document.getElementById('newsTitle').textContent = '記事が見つかりません';
+        document.getElementById('newsContent').textContent = '指定された記事は存在しないか、公開されていません。';
+        return;
+      }
+
+      document.getElementById('newsTitle').textContent = article.title;
+      document.getElementById('newsDate').textContent = article.date.replaceAll('-', '.');
+
+      let content = article.content || "";
+
+// 「掲載ページ」のURLだけ抜き出す
+let articleUrl = "";
+
+content = content.replace(
+  /掲載ページ[:：]\s*(https?:\/\/[^\s]+)/,
+  (_, url) => {
+    articleUrl = url;
+    return "";
+  }
+).trim();
+
+// 本文をHTML化
+let html = "";
+
+if (content) {
+  html += `
+    <div class="article-text">
+      ${content
+        .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+        .replace(/\n/g, "<br>")}
+    </div>
+  `;
+}
+
+// ボタン表示
+if (articleUrl) {
+  html += `
+    <div class="article-button-wrap">
+      <a
+        class="article-button"
+        href="${articleUrl}"
+        target="_blank"
+        rel="noopener"
+      >
+        ↗ 掲載記事を見る
+      </a>
+    </div>
+  `;
+}
+
+document.getElementById("newsContent").innerHTML = html;
+      document.title = article.title + ' | AnyTrail株式会社';
+    }
+
+    loadNewsDetail();
+  </script>
+</body>
+</html>

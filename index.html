@@ -3741,4 +3741,37 @@ window.addEventListener('scroll', () => {
   }
 })();
 </script>
+
+<script>
+  async function loadNews() {
+    try {
+      const response = await fetch('/api/news');
+      const data = await response.json();
+  
+      const newsList = document.querySelector('.news-list-d');
+      if (!newsList) return;
+  
+      newsList.innerHTML = data.news
+        .filter((item) => item.published && item.sites.includes('anytrail.jp'))
+        .slice(0, 3)
+        .map((item, index) => {
+          const date = item.date.replaceAll('-', '.');
+  
+          return `
+            <a href="./news/detail.html?date=${item.date.replaceAll('-', '')}" class="news-row-d">
+              <span class="news-date-d">${date}</span>
+              <span class="news-cat-d">NEWS</span>
+              <span class="news-title-d-text">${item.title}</span>
+            </a>
+          `;
+        })
+        .join('');
+    } catch (error) {
+      console.error('ニュース取得に失敗しました', error);
+    }
+  }
+  
+  loadNews();
+  </script>
+
 </body></html>
